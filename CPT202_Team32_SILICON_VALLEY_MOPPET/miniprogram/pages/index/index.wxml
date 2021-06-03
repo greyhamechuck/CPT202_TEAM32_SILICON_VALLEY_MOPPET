@@ -1,0 +1,56 @@
+<view class="list">
+    <view class="search flex-wrp">
+      <view class="search-left flex-item" style="width: 675rpx; height: 73rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+          <image src="../../images/search.png"></image>
+          <input style="width: 448rpx; height: 61rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  
+          value="{{inputValue}}" type="text" placeholder="Search" bindconfirm="handleInput" bindblur="handleInput" placeholder-class="search-placeholder"/>
+      </view>
+      <view class="search-right flex-item" bindtap="handleInput">
+          <image src="../../images/lighting.png" style="width: 78rpx; height: 64rpx; display: inline-block; box-sizing: border-box; right: auto; top: -71rpx; position: relative; left: 664rpx" class="search-right"></image>
+      </view>
+  </view>
+  <view class="search_content">
+    <navigator class="serch_item" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
+    wx:for="{{goods}}" wx:key="_openid">
+    {{item.content}}
+    </navigator>
+  </view>
+
+  <view class="banner">
+  <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" circular autoplay interval="4000">
+    <swiper-item><image style="width: 734rpx; height: 276rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  src="/images/banner1.jpg"/></swiper-item>
+    <swiper-item><image style="width: 712rpx; height: 294rpx; display: inline-block; box-sizing: content-box; left: NaNrpx; top: NaNrpx"  src="/images/banner2.jpg"/></swiper-item>
+    <swiper-item><image style="width: 706rpx; height: 336rpx; display: inline-block; box-sizing: content-box; left: NaNrpx; top: NaNrpx"  src="/images/banner3.jpg"/></swiper-item>
+  </swiper>
+</view>
+
+    <view class="item" wx:for="{{items}}" wx:key="index">
+        <view class="item-author">
+            <image class="item-author-img" src="{{item.authorimg}}"></image>
+            <view class="item-author-name">{{item.authorname}}</view>
+        </view>
+        <view class="item-text" bindtap="gotodetail" data-item="{{item}}">
+            <text>{{item.content}}</text>
+        </view>
+        <view class="item-info" style="width: 665rpx; height: 55rpx; display: flex; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+            <view class="item-info-time" style="display: flex; justify-content: center; align-items: center;">{{item.date}}</view>
+            <view class="item-info-picNum" style="width: 64rpx; height: 54rpx; display: flex; justify-content: center; align-items: center; box-sizing: border-box; left: NaNrpx; top: NaNrpx">{{item.image.length==0?'Null':item.image.length}} </view>
+            <text decode style="width: 6rpx; height: 54rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">&nbsp;</text>
+            <text style="display: flex; justify-content: center; align-items: center;">Picture</text>
+            <text decode style="width: 38rpx; height: 54rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">&nbsp;</text>
+            <view class = "thumbsup" bindtap = "thumbsup" data-item="{{item}}"> 
+                <view class="item-clicknumber" style="display: flex; justify-content: center; align-items: center;">{{item.clickcount}}</view>
+                <text decode>&nbsp;</text>
+
+                <view wx:if="{{item.clickcount==0}}">
+                    <image class="stars" src="../../images/star2.png" style="width: 46rpx; height: 46rpx; display: flex; box-sizing: border-box; left: NaNrpx; top: NaNrpx; justify-content: center; align-items: center"></image>
+                </view>     
+                <view wx:elif="{{item.clickcount!=0}}">
+                    <image class="starsf" src="../../images/star.png" style="width: 52rpx; height: 52rpx; display: flex; box-sizing: border-box; left: NaNrpx; top: NaNrpx; justify-content: center; align-items: center;"></image>
+                </view>    
+            </view>
+        </view>
+    </view>
+    <view class="tips" type="default" wx:if="{{number>0}}">Local ID：{{number}}</view>
+
+</view>

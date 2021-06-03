@@ -1,0 +1,40 @@
+<!--pages/search/search.wxml-->
+<view class="list">
+  <!-- 搜索框 -->
+    <view class="search flex-wrp">
+      <view class="search-left flex-item" style="width: 675rpx; height: 73rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+          <image src="../../images/search.png"></image>
+          <input style="width: 448rpx; height: 61rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  
+          value="{{inputValue}}" type="text" placeholder="Search" bindconfirm="handleInput" bindblur="handleInput" placeholder-class="search-placeholder"/>
+      </view>
+      <view class="search-right flex-item" bindtap="handleInput">
+          <image src="../../images/lighting.png" style="width: 78rpx; height: 64rpx; display: inline-block; box-sizing: border-box; right: auto; top: -71rpx; position: relative; left: 664rpx" class="search-right"></image>
+      </view>
+    
+  </view>
+  <!-- 搜索内容 -->
+  <scroll-view scroll-y="true" style="height: 1116rpx; width: 755rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+    <view class="item" wx:for="{{Datas}}" wx:key="index" bindtap="tapDetail">
+    <!-- 主要内容 -->
+    <!-- <view class="example-item" bindtap="tapDetail">
+        
+    </view> -->
+    <!-- 帖子内容 -->
+    <view class="item-author">
+            <image class="item-author-img" src="{{item.authorimg}}"></image>
+            <view class="item-author-name">{{item.authorname}}</view>
+        </view>
+        <view class="item-text" bindtap="todetail" data-item="{{item}}">
+            <text>{{item.content}}</text>
+        </view>
+        <view class="item-info">
+            <view class="item-info-time">{{item.date}}</view>
+            <view class="item-info-picNum" style="width: 64rpx; height: 54rpx; display: flex; justify-content: center; align-items: center; box-sizing: border-box; left: NaNrpx; top: NaNrpx">{{item.image.length==0?'Null':item.image.length}} </view>
+            <text decode style="width: 6rpx; height: 54rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">&nbsp;</text>
+            <text style="display: flex; justify-content: center; align-items: center;">Picture</text>
+        </view>
+    </view>
+  </scroll-view>
+  
+  
+</view>

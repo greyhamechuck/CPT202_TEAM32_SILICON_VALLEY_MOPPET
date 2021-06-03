@@ -1,0 +1,21 @@
+<!--pages/Comments/Comments.wxml-->
+<view class="list">
+
+<view class="item" wx:for="{{items}}" wx:key="index">
+    <view class="item-author">
+        <image class="item-author-img" src="{{item.authorimg}}"></image>
+        <view class="item-author-name">{{item.authorname}}</view>
+    </view>
+    <view class="item-text" bindtap="todetail" data-item="{{item}}">
+        <text>{{item.content}}</text>
+    </view>
+    <view class="item-info">
+        <view class="item-info-time">{{item.date}}</view>
+        <view class="item-info-picNum" style="width: 64rpx; height: 54rpx; display: flex; justify-content: center; align-items: center; box-sizing: border-box; left: NaNrpx; top: NaNrpx">{{item.image.length==0?'Null':item.image.length}} </view>
+            <text decode style="width: 6rpx; height: 54rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">&nbsp;</text>
+            <text style="display: flex; justify-content: center; align-items: center;">Picture</text>
+    </view>
+</view>
+<view class="tips" type="default" wx:if="{{number>0}}">Local ID：{{number}}</view>
+</view>
+

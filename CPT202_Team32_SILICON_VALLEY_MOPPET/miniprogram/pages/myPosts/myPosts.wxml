@@ -1,0 +1,31 @@
+
+<view class="wholepage" wx:for="{{dataList}}" wx:key="index"wx:for-index="weibo">
+  <navigator class="block" id="page"  wx:key="index" >
+
+
+    <block>
+      <view class="user-group">
+        <image class="avatar" src="{{item.authorimg}}"></image>
+        <view class="right-info">
+          <view class="name">Poster： {{item.authorname}}</view>
+          <view class="detail-info">
+            <view class="time">Date：{{item.data}} </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="publishInfo">
+        <text>{{item.content}}</text>
+      </view>
+
+      <view id="picblock">
+        <view class="getblock" wx:for="{{item.image}}" wx:for-item="oneimage" id="test">
+          <image class="userpicture" bindtap="1" src="{{oneimage}}" mode="aspectFill" />
+        </view>
+      </view>
+
+
+    </block>
+  </navigator>
+
+</view>

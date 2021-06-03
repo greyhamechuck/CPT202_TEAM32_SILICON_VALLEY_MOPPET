@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/add/add",
+    "pages/detail/detail",
+    "pages/myPosts/myPosts",
+    "pages/likes/likes",
+    "pages/Comments/Comments",
+    "pages/Mine/Mine",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#C3C9FF",
+    "navigationBarTitleText": "Mop-Pet",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#C3C9FF",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_focus.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "Send",
+        "iconPath": "images/addpost.png",
+        "selectedIconPath": "images/addpost.png"
+      }, 
+      {
+        "pagePath": "pages/Mine/Mine",
+        "text": "Me",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_hl.png"
+      }
+
+    ]
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json"
+}

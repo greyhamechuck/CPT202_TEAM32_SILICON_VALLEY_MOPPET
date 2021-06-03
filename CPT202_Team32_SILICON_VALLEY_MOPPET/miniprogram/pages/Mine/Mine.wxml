@@ -1,0 +1,52 @@
+
+<view class="container more">
+  <view class="user flex-wrp">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> Get the avatar and nickname </button>
+    </block>
+    
+    
+    <block wx:else>
+      <view class="avatar flex-item">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover">
+        </image>
+      </view>
+      <view class="user-info flex-item">
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </block>
+    
+  </view>
+
+  <view class="my">
+
+    <navigator class="my-item flex-wrp" url="/pages/myPosts/myPosts">
+      <view class="myitem-icon flex-item" >
+        <image src="/images/dog.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>My posts</text>
+      </view>
+    </navigator>
+
+    <navigator class="my-item flex-wrp" url="/pages/likes/likes">
+      <view class="myitem-icon flex-item" >
+        <image src="/images/cat.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>Likes </text>
+      </view>
+    </navigator>
+
+
+    <navigator class="my-item flex-wrp" url="/pages/Comments/Comments">
+      <view class="myitem-icon flex-item" >
+        <image src="/images/Comments.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>Comments</text>
+      </view>
+    </navigator>
+
+  </view>
+</view>

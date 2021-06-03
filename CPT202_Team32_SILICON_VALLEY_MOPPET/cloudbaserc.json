@@ -1,0 +1,14 @@
+{
+  "envId": "cloud1-1g2orxmmbe6151b3",
+  "framework": {
+    "plugins": {
+      "static": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "outputPath": "hole",
+          "cloudPath": "/hole"
+        }
+      }
+    }
+  }
+}
